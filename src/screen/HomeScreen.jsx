@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View, ImageBackground,TouchableOpacity } from 'react-native'
 import React from 'react'
-import { color } from '../utils/color'
+import { useNavigation } from '@react-navigation/native'
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ImageBackground  source={require("../assets/green.png")} style={styles.greenleaf}>
