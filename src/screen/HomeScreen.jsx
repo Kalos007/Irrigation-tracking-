@@ -4,23 +4,29 @@ import { useNavigation } from '@react-navigation/native'
 
 const HomeScreen = () => {
   const navigation = useNavigation();
+
+  const handleLogin = () => {
+    navigation.navigate("Login");
+  };
+  const handleSignUp = () => {
+    navigation.navigate("Signup");
+  };
   return (
     <View style={styles.container}>
       <ImageBackground  source={require("../assets/green.png")} style={styles.greenleaf}>
         <Text style={styles.title}>Welcome to GreenLeaf</Text>
         <View style={styles.buttonContainer}>
-        <TouchableOpacity style={[styles.buttonLogin ,{backgroundColor:"primary"}]} onPress={() => navigation.navigate('LoginScreen')}>
+        <TouchableOpacity style={[styles.buttonLogin ,{backgroundColor:"primary"}]} onPress={handleLogin}>
           <Text style={styles.buttonTextLogin}>Login</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.buttonLogin ,{backgroundColor:"black",width:"53%",borderWidth:3.5,borderColor:"white",}]} onPress={() => navigation.navigate('buttonSignup')}>
+        <TouchableOpacity style={[styles.buttonLogin ,{backgroundColor:"black",width:"53%",borderWidth:3.5,borderColor:"white",}]} onPress={handleSignUp}>
           <Text style={styles.buttonTextLogin}>Sign Up</Text>
         </TouchableOpacity>
         </View>
       </ImageBackground>
-
     </View>
   )
-}
+};
 
 export default HomeScreen
 
